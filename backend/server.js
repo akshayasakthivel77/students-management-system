@@ -30,15 +30,26 @@ app.use('/api/grades', gradeRoutes);
 app.use('/api/fees', feeRoutes);
 app.use('/api/export', exportRoutes);
 
-// Root health-check
-app.get('/', (req, res) => {
-  res.json({ message: 'Student Management API is running 🚀' });
-});
+const path = require('path');
+const fs = require('fs');
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found' });
-});
+const frontendDist = path.join(__dirname, '../frontend/dist');
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(frontendDist, 'index.html'));
+  });
+} else {
+  // Root health-check
+  app.get('/', (req, res) => {
+    res.json({ message: 'Student Management API is running 🚀' });
+  });
+
+  // 404 handler
+  app.use((req, res) => {
+    res.status(404).json({ message: 'Route not found' });
+  });
+}
 
 // Global error handler
 app.use((err, req, res, next) => {

@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: students-management-system
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGO_URI
+        sync: false
+      - key: ADMIN_NAME
+        value: Akashaya Sakthivel
+      - key: ADMIN_EMAIL
+        value: akashiyasakthivel123@gmail.com
+      - key: ADMIN_PASSWORD
+        value: akashiya123
