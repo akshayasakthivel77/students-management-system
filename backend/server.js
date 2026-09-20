@@ -62,10 +62,14 @@ const startServer = async () => {
   
   // Seed/update admin user
   try {
-    let admin = await User.findOne({ role: 'admin' });
-    const email = process.env.ADMIN_EMAIL || 'admin@school.edu';
-    const password = process.env.ADMIN_PASSWORD || 'password123';
+    const email = (process.env.ADMIN_EMAIL || 'akshayasakthivel.77@gmail.com').toLowerCase().trim();
+    const password = process.env.ADMIN_PASSWORD || 'akshayasakthivel77';
     const name = process.env.ADMIN_NAME || 'Akashaya Sakthivel';
+
+    let admin = await User.findOne({ email });
+    if (!admin) {
+      admin = await User.findOne({ role: 'admin' });
+    }
 
     if (!admin) {
       admin = await User.create({
@@ -78,6 +82,9 @@ const startServer = async () => {
     } else {
       admin.name = name;
       admin.email = email;
+      admin.password = password;
+      admin.role = 'admin';
+      admin.isActive = true;
       await admin.save();
       console.log(`✅ Admin user updated: ${email} (${name})`);
     }

@@ -22,8 +22,8 @@ export default function Login() {
   const handleQuickFill = () => {
     setUnlocked(true);
     setForm({
-      email: 'akashiyasakthivel123@gmail.com',
-      password: 'akashiya123',
+      email: 'akshayasakthivel.77@gmail.com',
+      password: 'akshayasakthivel77',
     });
     toast.success('Credentials filled! Click Sign In 🚀');
   };

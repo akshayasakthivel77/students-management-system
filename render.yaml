@@ -15,6 +15,6 @@ services:
       - key: ADMIN_NAME
         value: Akashaya Sakthivel
       - key: ADMIN_EMAIL
-        value: akashiyasakthivel123@gmail.com
+        value: akshayasakthivel.77@gmail.com
       - key: ADMIN_PASSWORD
-        value: akashiya123
+        value: akshayasakthivel77
