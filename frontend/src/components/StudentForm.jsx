@@ -57,7 +57,7 @@ export default function StudentForm({ initialData = {}, onSuccess }) {
         <div className="form-group">
           <label className="form-label">Email *</label>
           <input name="email" type="email" value={form.email} onChange={handleChange}
-            className="form-control" placeholder="john@example.com" required />
+            className="form-control" placeholder="student@gmail.com" required />
         </div>
         <div className="form-group">
           <label className="form-label">Roll Number *</label>

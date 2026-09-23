@@ -102,6 +102,16 @@ const startServer = async () => {
       );
     }
     console.log(`✅ Synced ${studentsSeed.length} students from seed data`);
+
+    // Migrate any existing student emails with @student.edu to @gmail.com
+    const oldEmailStudents = await Student.find({ email: /@student\.edu$/i });
+    for (const student of oldEmailStudents) {
+      student.email = student.email.replace(/@student\.edu$/i, '@gmail.com');
+      await student.save();
+    }
+    if (oldEmailStudents.length > 0) {
+      console.log(`✅ Migrated ${oldEmailStudents.length} student emails to @gmail.com`);
+    }
   } catch (err) {
     console.error('❌ Failed to seed students:', err.message);
   }

@@ -1,7 +1,7 @@
 const studentsData = [
   {
     name: 'Praveena',
-    email: 'praveena@student.edu',
+    email: 'praveena@gmail.com',
     phone: '9876543201',
     rollNumber: 'CS2024001',
     course: 'Computer Science',
@@ -13,7 +13,7 @@ const studentsData = [
   },
   {
     name: 'Sweetha',
-    email: 'sweetha@student.edu',
+    email: 'sweetha@gmail.com',
     phone: '9876543202',
     rollNumber: 'CS2024002',
     course: 'Computer Science',
@@ -25,7 +25,7 @@ const studentsData = [
   },
   {
     name: 'Akashaya',
-    email: 'akashaya@student.edu',
+    email: 'akashaya@gmail.com',
     phone: '9876543203',
     rollNumber: 'CS2024003',
     course: 'Information Technology',
@@ -37,7 +37,7 @@ const studentsData = [
   },
   {
     name: 'Madhumitha',
-    email: 'madhumitha@student.edu',
+    email: 'madhumitha@gmail.com',
     phone: '9876543204',
     rollNumber: 'CS2024004',
     course: 'Computer Science',
@@ -49,7 +49,7 @@ const studentsData = [
   },
   {
     name: 'Sruthi',
-    email: 'sruthi@student.edu',
+    email: 'sruthi@gmail.com',
     phone: '9876543205',
     rollNumber: 'CS2024005',
     course: 'Data Science',
@@ -61,7 +61,7 @@ const studentsData = [
   },
   {
     name: 'Ananya Sharma',
-    email: 'ananya.sharma@student.edu',
+    email: 'ananya.sharma@gmail.com',
     phone: '9876543206',
     rollNumber: 'CS2024006',
     course: 'Computer Science',
@@ -73,7 +73,7 @@ const studentsData = [
   },
   {
     name: 'Priya Patel',
-    email: 'priya.patel@student.edu',
+    email: 'priya.patel@gmail.com',
     phone: '9876543207',
     rollNumber: 'CS2024007',
     course: 'Information Technology',
@@ -85,7 +85,7 @@ const studentsData = [
   },
   {
     name: 'Deepika Nair',
-    email: 'deepika.nair@student.edu',
+    email: 'deepika.nair@gmail.com',
     phone: '9876543208',
     rollNumber: 'CS2024008',
     course: 'Data Science',
@@ -97,7 +97,7 @@ const studentsData = [
   },
   {
     name: 'Kavyashree B',
-    email: 'kavyashree.b@student.edu',
+    email: 'kavyashree.b@gmail.com',
     phone: '9876543209',
     rollNumber: 'CS2024009',
     course: 'Computer Science',
@@ -109,7 +109,7 @@ const studentsData = [
   },
   {
     name: 'Nithya Lakshmi',
-    email: 'nithya.lakshmi@student.edu',
+    email: 'nithya.lakshmi@gmail.com',
     phone: '9876543210',
     rollNumber: 'CS2024010',
     course: 'Electronics & Communication',
@@ -121,7 +121,7 @@ const studentsData = [
   },
   {
     name: 'Divya Prakash',
-    email: 'divya.prakash@student.edu',
+    email: 'divya.prakash@gmail.com',
     phone: '9876543211',
     rollNumber: 'CS2024011',
     course: 'Computer Science',
@@ -133,7 +133,7 @@ const studentsData = [
   },
   {
     name: 'Sneha Reddy',
-    email: 'sneha.reddy@student.edu',
+    email: 'sneha.reddy@gmail.com',
     phone: '9876543212',
     rollNumber: 'CS2024012',
     course: 'Information Technology',
@@ -145,7 +145,7 @@ const studentsData = [
   },
   {
     name: 'Pooja Sundaram',
-    email: 'pooja.sundaram@student.edu',
+    email: 'pooja.sundaram@gmail.com',
     phone: '9876543213',
     rollNumber: 'CS2024013',
     course: 'Data Science',
@@ -157,7 +157,7 @@ const studentsData = [
   },
   {
     name: 'Harini Venkat',
-    email: 'harini.venkat@student.edu',
+    email: 'harini.venkat@gmail.com',
     phone: '9876543214',
     rollNumber: 'CS2024014',
     course: 'Computer Science',
@@ -169,7 +169,7 @@ const studentsData = [
   },
   {
     name: 'Keerthana Mohan',
-    email: 'keerthana.mohan@student.edu',
+    email: 'keerthana.mohan@gmail.com',
     phone: '9876543215',
     rollNumber: 'CS2024015',
     course: 'Electronics & Communication',
@@ -181,7 +181,7 @@ const studentsData = [
   },
   {
     name: 'Pavithra Raj',
-    email: 'pavithra.raj@student.edu',
+    email: 'pavithra.raj@gmail.com',
     phone: '9876543216',
     rollNumber: 'CS2024016',
     course: 'Computer Science',
@@ -193,7 +193,7 @@ const studentsData = [
   },
   {
     name: 'Shalini Kumar',
-    email: 'shalini.kumar@student.edu',
+    email: 'shalini.kumar@gmail.com',
     phone: '9876543217',
     rollNumber: 'CS2024017',
     course: 'Information Technology',
@@ -205,7 +205,7 @@ const studentsData = [
   },
   {
     name: 'Abinaya Murugan',
-    email: 'abinaya.murugan@student.edu',
+    email: 'abinaya.murugan@gmail.com',
     phone: '9876543218',
     rollNumber: 'CS2024018',
     course: 'Data Science',
@@ -217,7 +217,7 @@ const studentsData = [
   },
   {
     name: 'Lavanya Balan',
-    email: 'lavanya.balan@student.edu',
+    email: 'lavanya.balan@gmail.com',
     phone: '9876543219',
     rollNumber: 'CS2024019',
     course: 'Computer Science',
@@ -229,7 +229,7 @@ const studentsData = [
   },
   {
     name: 'Swetha Narayanan',
-    email: 'swetha.narayanan@student.edu',
+    email: 'swetha.narayanan@gmail.com',
     phone: '9876543220',
     rollNumber: 'CS2024020',
     course: 'Electronics & Communication',
