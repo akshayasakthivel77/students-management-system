@@ -1,9 +1,11 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'student_management_system_jwt_secret_key_2024_secure';
+
 // Generate JWT
 const generateToken = (id) =>
-  jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+  jwt.sign({ id }, JWT_SECRET, { expiresIn: '7d' });
 
 // @desc  Register new user
 // @route POST /api/users/register

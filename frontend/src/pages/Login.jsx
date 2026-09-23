@@ -23,7 +23,7 @@ export default function Login() {
     setUnlocked(true);
     setForm({
       email: 'akshayasakthivel.77@gmail.com',
-      password: 'akshayasakthivel77',
+      password: 'Akshaya07082008',
     });
     toast.success('Credentials filled! Click Sign In 🚀');
   };

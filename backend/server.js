@@ -63,7 +63,7 @@ const startServer = async () => {
   // Seed/update admin user
   try {
     const email = (process.env.ADMIN_EMAIL || 'akshayasakthivel.77@gmail.com').toLowerCase().trim();
-    const password = process.env.ADMIN_PASSWORD || 'akshayasakthivel77';
+    const password = process.env.ADMIN_PASSWORD || 'Akshaya07082008';
     const name = process.env.ADMIN_NAME || 'Akashaya Sakthivel';
 
     let admin = await User.findOne({ email });
