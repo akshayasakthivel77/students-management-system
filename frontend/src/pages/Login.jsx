@@ -1,32 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import api from '../services/api';
 
 export default function Login() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({
+    email: 'akshayasakthivel.77@gmail.com',
+    password: 'Akshaya07082008',
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
 
   const currentUser = JSON.parse(localStorage.getItem('user') || 'null');
 
-  useEffect(() => {
-    // Strictly clear credentials on page load so only Email ID placeholder displays
-    setForm({ email: '', password: '' });
-  }, []);
-
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleQuickFill = () => {
-    setUnlocked(true);
-    setForm({
-      email: 'akshayasakthivel.77@gmail.com',
-      password: 'Akshaya07082008',
-    });
-    toast.success('Credentials filled! Click Sign In 🚀');
-  };
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -34,11 +22,10 @@ export default function Login() {
     window.location.reload();
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const executeLogin = async (credentials) => {
     setLoading(true);
     try {
-      const data = await api.post('/users/login', form);
+      const data = await api.post('/users/login', credentials);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify({ name: data.name, email: data.email, role: data.role }));
       toast.success(`Welcome back, ${data.name}! 🎉`);
@@ -49,6 +36,20 @@ export default function Login() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    executeLogin(form);
+  };
+
+  const handleQuickLogin = () => {
+    const creds = {
+      email: 'akshayasakthivel.77@gmail.com',
+      password: 'Akshaya07082008',
+    };
+    setForm(creds);
+    executeLogin(creds);
   };
 
   return (
@@ -90,25 +91,36 @@ export default function Login() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} autoComplete="off">
-          {/* Dummy inputs to divert browser autofill */}
-          <input type="text" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-          <input type="password" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+        {/* Demo Credentials Box */}
+        <div style={{
+          background: 'rgba(99, 102, 241, 0.08)',
+          border: '1px solid rgba(99, 102, 241, 0.2)',
+          borderRadius: '10px',
+          padding: '12px 14px',
+          marginBottom: '20px',
+          fontSize: '12px',
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+            <span style={{ fontWeight: 600, color: 'var(--accent-light)' }}>🔑 Admin Credentials</span>
+            <span className="badge badge-success" style={{ fontSize: '10px' }}>Ready to Sign In</span>
+          </div>
+          <div style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+            <div><strong>Email:</strong> <code style={{ color: 'var(--text-primary)' }}>akshayasakthivel.77@gmail.com</code></div>
+            <div><strong>Password:</strong> <code style={{ color: 'var(--text-primary)' }}>Akshaya07082008</code></div>
+          </div>
+        </div>
 
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label">Email ID</label>
             <input
               id="login-account"
-              name="user_email_id"
-              type="text"
+              name="email"
+              type="email"
               className="form-control"
-              placeholder="Email ID"
-              autoComplete="off"
-              readOnly={!unlocked}
-              onFocus={() => setUnlocked(true)}
-              onClick={() => setUnlocked(true)}
+              placeholder="akshayasakthivel.77@gmail.com"
               value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              onChange={handleChange}
               required
             />
           </div>
@@ -134,36 +146,38 @@ export default function Login() {
             </div>
             <input
               id="password"
-              name="user_password"
+              name="password"
               type={showPassword ? 'text' : 'password'}
               className="form-control"
               placeholder="••••••••"
-              autoComplete="new-password"
-              readOnly={!unlocked}
-              onFocus={() => setUnlocked(true)}
-              onClick={() => setUnlocked(true)}
               value={form.password}
-              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              onChange={handleChange}
               required
             />
           </div>
 
-          <button type="submit" className="btn btn-primary w-full btn-lg" style={{ marginTop: '8px' }} disabled={loading}>
+          <button
+            type="submit"
+            className="btn btn-primary w-full btn-lg"
+            style={{ marginTop: '8px' }}
+            disabled={loading}
+          >
             {loading ? <><span className="spinner" /> Signing in...</> : '🔐 Sign In'}
           </button>
 
           <button
             type="button"
-            onClick={handleQuickFill}
+            onClick={handleQuickLogin}
+            disabled={loading}
             className="btn btn-secondary w-full"
             style={{ marginTop: '10px', fontSize: '13px' }}
           >
-            ⚡ Quick-Fill Your Credentials
+            ⚡ 1-Click Sign In as Admin
           </button>
         </form>
 
-        <p className="text-center text-muted" style={{ marginTop: '20px' }}>
-          Don't have an account? Contact your administrator.
+        <p className="text-center text-muted" style={{ marginTop: '20px', fontSize: '12px' }}>
+          Administrator Account • Student Management System
         </p>
       </div>
     </div>
