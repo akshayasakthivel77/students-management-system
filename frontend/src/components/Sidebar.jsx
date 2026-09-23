@@ -6,6 +6,7 @@ const navItems = [
   { to: '/students/add', icon: '➕', label: 'Add Student' },
   { to: '/attendance', icon: '📋', label: 'Attendance' },
   { to: '/profile', icon: '👤', label: 'My Profile' },
+  { to: '/settings', icon: '⚙️', label: 'Settings' },
 ];
 
 export default function Sidebar({ isOpen }) {

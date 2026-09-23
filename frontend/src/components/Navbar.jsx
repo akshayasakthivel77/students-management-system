@@ -8,6 +8,7 @@ const pageTitles = {
   '/students/add': 'Add Student',
   '/attendance': 'Attendance',
   '/profile': 'My Profile',
+  '/settings': 'Settings & Preferences',
 };
 
 export default function Navbar({ toggleSidebar }) {
